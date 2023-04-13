@@ -38,7 +38,7 @@ def update_status(task_id):
 
 
 
-@app.route("/create", methods=['POST'])
+@app.route("/create", methods=['POST','GET'])
 def create():
     """ recieves post requests to add new task """
     data = request.get_json()
@@ -47,7 +47,7 @@ def create():
     return jsonify(result)
 
 
-@app.route("/fetch-max-id",methods=['GET'])
+@app.route("/fetch-max-id",methods=['GET','POST'])
 def fetch_max_id():
     data = request.get_json()
     result= db_helper.fetch_max_id()
